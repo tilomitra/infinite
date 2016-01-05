@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Infinite: Useful CSS Animations</title>
+
+    <style>
+        html, body {
+            font-family: "Avenir", sans-serif;
+            background-color: #222;
+            color: #eee;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        h1,h2,h3,h4,h5,h6 {
+            font-weight: 300;
+        }
+
+        h1 {
+            text-align: center;
+            padding-bottom: 40px;
+            line-height: 1;
+            font-size: 80px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ccc;
+        }
+
+        h1 .sub.header {
+            margin-top: 0;
+            padding-top: 0;
+            color: #aaa;
+            line-height: 1.6;
+            font-size: 18px;
+
+        }
+
+        .container {
+            margin: 20px auto;
+            text-shadow: 0 1px 1px rgba(0,0,0,0.6);
+        }
+
+        .example-item {
+            text-align: center;
+        }
+
+        .btns {
+            text-align: center;
+        }
+
+        .btn, .btn-basic {
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            padding: 10px 30px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .btn {
+            background: #8c66cf;
+        }
+
+        .btn-basic {
+            background: transparent;
+            border: 1px solid #8c66cf;
+        }
+
+
+        .footer {
+            background: #444;
+            padding: 20px 0 30px;
+            text-align: center;
+        }
+        .footer-avatar {
+            border-radius: 32px;
+            position: relative;
+            top: 8px;
+        }
+
+
+        .pulsate-css {
+            border: 3px solid #999;
+            border-radius: 30px;
+            height: 18px;
+            width: 18px;
+            position: relative;
+            display: inline-block;
+            animation: pulsate 1s ease-out;
+            animation-iteration-count: infinite; 
+            opacity: 0.0;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .opacityPulse-css {
+            animation: opacityPulse 2s ease-out;
+            animation-iteration-count: infinite; 
+            opacity: 1;
+            text-align: center;
+        }
+
+        .alertPulse-css {
+            animation: alertPulse 1s ease-out;
+            animation-iteration-count: infinite;
+            opacity: 1;
+            padding: 5px;
+            text-align: center;
+            border-radius: 50px;
+            background: #9A2727;
+        }
+
+        .rotating-css {
+            animation: rotating 2s linear;
+            animation-iteration-count: infinite;
+        }
+
+        pre, code {
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        h2 {
+            padding-left: 20px;
+            border-left: 1px solid #a98ddb;
+            margin-top: 100px;
+            text-shadow: 0 1px 1px rgba(0,0,0,0.6);
+        }
+
+        pre {
+            border-left: 1px solid #a98ddb;
+            background: #333;
+            font-size: 14px;
+            padding-left: 20px;
+        }
+
+        code {
+            color: #a98ddb;
+        }
+
+        pre code {
+            color: #ddd;
+        }
+
+
+        @media (min-width: 480px) {
+            .container {
+                margin: 50px auto;
+                width: 100%;
+                max-width: 800px;
+            }
+        }
+
+    </style>
+
+    <link rel="stylesheet" href="infinite.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>
+            ∞
+            <div class="sub header">Useful infinite CSS animations that you can drop into your project.</div>
+        </h1>
+    
+        <div class="btns">
+            <a href="infinite.css" class="btn">Get infinite.css v0.1</a>
+            <a href="http://github.com/tilomitra/infinite" class="btn-basic">Github</a>
+        </div>
+
+
+
+        <div class="examples">
+            <h2><code>pulsate</code></h2>
+            <p>This will generate a pulsating item that changes <code>opacity</code> and <code>scale</code>. I normally use it for loading indicators.</p>
+            <div class="example-item pulsate-css"></div>
+
+            <pre><code>
+.pulsate-css {
+    animation: pulsate 1s ease-out;
+    animation-iteration-count: infinite; 
+    opacity: 0.0;
+
+    /* you dont need the stuff below, but its what I used to create the loading circle */
+    border: 3px solid #999;
+    border-radius: 30px;
+    height: 18px;
+    width: 18px;
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+}
+            </code></pre>
+
+
+            <h2><code>opacityPulse</code></h2>
+            <p>This will generate an opacity pulse. Useful for muted text items.</p>
+            <div class="example-item opacityPulse-css">
+                <p>Here is some text that will be pulsating.</p>
+            </div>
+
+            <pre><code>
+.opacityPulse-css {
+    animation: opacityPulse 2s ease-out;
+    animation-iteration-count: infinite; 
+    opacity: 1;
+}
+            </code></pre>
+
+
+
+            <h2><code>alertPulse</code></h2>
+            <p>This will generate a background-color pulse. Since it is red, I call it an alert pulse.</p>
+            <div class="example-item alertPulse-css">
+                <p>Something is wrong.</p>
+            </div>
+
+            <pre><code>
+.alertPulse-css {
+    animation: alertPulse 2s ease-out;
+    animation-iteration-count: infinite;
+    opacity: 1;
+    background: #9A2727; /* you need this to specify a color to pulse to */
+}
+            </code></pre>
+
+
+
+            <h2><code>rotating</code></h2>
+            <p>This will generate an infinitely rotating item. The speed is dependent on the animation duration (<code>2s</code> for this example).</p>
+            <div class="example-item">
+                <img src="demo-assets/fan.png" width="48" height="auto" class="rotating-css"/>
+            </div>
+
+            <pre><code>
+.rotating-css {
+    animation: rotating 2s linear;
+    animation-iteration-count: infinite;
+}
+            </code></pre>
+        </div>
+    </div>    
+    <div class="footer">
+        <img src="https://pbs.twimg.com/profile_images/529721134107734016/19rKbZoX_400x400.png" class="footer-avatar" width="32" height="32">
+        <a href="http://twitter.com/tilomitra">Made by Tilo</a>. MIT Licensed.
+    </div>
+</body>
+</html>
