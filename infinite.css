@@ -36,8 +36,8 @@
 */
 @-webkit-keyframes alertPulse {
     0% {background-color: #9A2727; opacity: 1;}
-    50% {opacity: red; opacity: 0.75; }
-    100% {opacity: #9A2727; opacity: 1;}
+    50% {background-color: red; opacity: 0.75; }
+    100% {background-color: #9A2727; opacity: 1;}
 }
 
 
